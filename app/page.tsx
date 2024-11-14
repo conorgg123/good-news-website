@@ -18,19 +18,78 @@ export default function Home() {
   const [verses, setVerses] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Content pools
   const allNews = [
     {
-      title: "Community Garden Initiative Feeds 1000+ Families",
-      source: "Local Impact News",
+      title: "Community Plants 10,000 Trees in Urban Areas",
+      source: "Environmental News",
       sourceUrl: "https://goodnewsnetwork.org/category/environment/",
-      description: "Urban farming initiative expands to multiple locations, providing fresh produce and education about sustainable living to over 1000 families each month."
+      description: "Local volunteers transform city landscapes with massive tree-planting initiative, creating new green spaces for future generations."
     },
     {
-      title: "Revolutionary Solar Technology Breakthrough",
-      source: "Renewable Energy Watch",
+      title: "Solar Power Breakthrough Could Revolutionize Energy",
+      source: "Tech Today",
       sourceUrl: "https://goodnewsnetwork.org/category/science/",
-      description: "Scientists achieve record-breaking 45% efficiency in new solar cell design, potentially making solar power more affordable and accessible worldwide."
+      description: "New solar panel design achieves record-breaking efficiency levels, promising more affordable clean energy for communities worldwide."
+    },
+    {
+      title: "Shelter Pets Find Homes in Record Numbers",
+      source: "Animal News",
+      sourceUrl: "https://goodnewsnetwork.org/category/animals/",
+      description: "Weekend adoption event results in empty kennels at local shelter as community comes together to give pets forever homes."
+    },
+    {
+      title: "Students Create App to Help Elderly Connect",
+      source: "Youth Impact",
+      sourceUrl: "https://goodnewsnetwork.org/category/youth/",
+      description: "High school coding club develops free app connecting senior citizens with volunteers for daily tasks and companionship."
+    },
+    {
+      title: "Ocean Cleanup Project Exceeds Expectations",
+      source: "Marine News",
+      sourceUrl: "https://goodnewsnetwork.org/category/environment/",
+      description: "Innovative system removes 100,000 kg of plastic from ocean, showing promising results for marine ecosystem recovery."
+    },
+    {
+      title: "Community Garden Feeds Over 1,000 Families",
+      source: "Local Heroes",
+      sourceUrl: "https://goodnewsnetwork.org/category/heroes/",
+      description: "Volunteer-run garden project provides fresh produce to community members, fostering sustainable food solutions."
+    },
+    {
+      title: "New Cancer Treatment Shows 90% Success Rate",
+      source: "Health News",
+      sourceUrl: "https://goodnewsnetwork.org/category/health/",
+      description: "Revolutionary therapy offers hope in early clinical trials, showing unprecedented results in treating specific cancer types."
+    },
+    {
+      title: "Small Town Achieves 100% Renewable Energy",
+      source: "Green Future",
+      sourceUrl: "https://goodnewsnetwork.org/category/environment/",
+      description: "Community becomes first in region to run entirely on clean energy, setting example for sustainable living."
+    },
+    {
+      title: "Youth Coding Program Receives Major Funding",
+      source: "Education Weekly",
+      sourceUrl: "https://goodnewsnetwork.org/category/youth/",
+      description: "Free programming classes to be offered in underserved areas, opening new opportunities for young learners."
+    },
+    {
+      title: "Historic Wildlife Recovery in Protected Areas",
+      source: "Nature Watch",
+      sourceUrl: "https://goodnewsnetwork.org/category/environment/",
+      description: "Endangered species populations show remarkable comeback thanks to conservation efforts and community support."
+    },
+    {
+      title: "Revolutionary Water Purification Method Developed",
+      source: "Science Daily",
+      sourceUrl: "https://goodnewsnetwork.org/category/science/",
+      description: "Low-cost solution could provide clean water to millions, making safe drinking water more accessible globally."
+    },
+    {
+      title: "Food Bank Expansion Reaches Rural Communities",
+      source: "Community Care",
+      sourceUrl: "https://goodnewsnetwork.org/category/world/",
+      description: "Mobile food pantry program launches to serve remote areas, ensuring no community goes hungry."
     }
   ];
 
@@ -39,15 +98,40 @@ export default function Home() {
     "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
     "Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill",
     "The only way to do great work is to love what you do. - Steve Jobs",
-    "Everything is possible. The impossible just takes longer. - Dan Brown"
+    "Everything is possible. The impossible just takes longer. - Dan Brown",
+    "Don&apos;t watch the clock; do what it does. Keep going. - Sam Levenson",
+    "The best way to predict the future is to create it. - Peter Drucker",
+    "Everything you&apos;ve ever wanted is on the other side of fear. - George Addair",
+    "Life is what happens while you&apos;re busy making other plans. - John Lennon",
+    "You miss 100% of the shots you don&apos;t take. - Wayne Gretzky",
+    "In the middle of difficulty lies opportunity. - Albert Einstein",
+    "The secret of getting ahead is getting started. - Mark Twain",
+    "Whether you think you can or you think you can&apos;t, you&apos;re right. - Henry Ford",
+    "The journey of a thousand miles begins with one step. - Lao Tzu",
+    "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+    "The harder you work for something, the greater you&apos;ll feel when you achieve it. - Anonymous",
+    "Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill",
+    "What lies behind us and what lies before us are tiny matters compared to what lies within us. - Ralph Waldo Emerson",
+    "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+    "Do what you can, with what you have, where you are. - Theodore Roosevelt"
   ];
 
   const allVerses = [
     "Philippians 4:13 - I can do all things through Christ who strengthens me.",
-    "Jeremiah 29:11 - For I know the plans I have for you, declares the Lord, plans for welfare and not for evil.",
-    "Isaiah 41:10 - Fear not, for I am with you; be not dismayed, for I am your God.",
+    "Jeremiah 29:11 - For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+    "Isaiah 41:10 - Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you.",
     "Romans 8:28 - And we know that in all things God works for the good of those who love him.",
-    "Joshua 1:9 - Be strong and courageous. Do not be afraid; do not be discouraged."
+    "Joshua 1:9 - Be strong and courageous. Do not be afraid; do not be discouraged.",
+    "Proverbs 3:5-6 - Trust in the Lord with all your heart and lean not on your own understanding.",
+    "Psalm 23:4 - Even though I walk through the valley of the shadow of death, I will fear no evil.",
+    "Matthew 11:28 - Come to me, all you who are weary and burdened, and I will give you rest.",
+    "John 3:16 - For God so loved the world that he gave his one and only Son.",
+    "Psalm 46:1 - God is our refuge and strength, an ever-present help in trouble.",
+    "Romans 15:13 - May the God of hope fill you with all joy and peace.",
+    "2 Timothy 1:7 - For God has not given us a spirit of fear, but of power and of love.",
+    "Hebrews 11:1 - Now faith is confidence in what we hope for and assurance about what we do not see.",
+    "1 Peter 5:7 - Cast all your anxiety on him because he cares for you.",
+    "Colossians 3:23 - Whatever you do, work at it with all your heart, as working for the Lord."
   ];
 
   useEffect(() => {
