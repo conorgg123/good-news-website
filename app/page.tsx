@@ -192,7 +192,7 @@ export default function Home() {
           muted 
           playsInline
           className="object-cover w-full h-full"
-          style={{ opacity: 0.8 }}
+          style={{ opacity: 0.9 }}
         >
           <source src={currentBackground} type="video/mp4" />
         </video>
