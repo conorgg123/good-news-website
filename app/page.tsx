@@ -157,9 +157,9 @@ export default function Home() {
     // Set random background (90% chance for ocean1.mp4)
     const randomVal = Math.random();
     if (randomVal < 0.9) {
-      setCurrentBackground('/ocean1.mp4');
+      setCurrentBackground('/ocean2.mp4');
     } else {
-      const otherVideos = ['/ocean2.mp4', '/ocean3.mp4'];
+      const otherVideos = ['/ocean1.mp4', '/ocean3.mp4'];
       setCurrentBackground(otherVideos[Math.floor(Math.random() * 2)]);
     }
 
