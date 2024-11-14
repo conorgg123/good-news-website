@@ -11,7 +11,7 @@ interface NewsItem {
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentBackground, setCurrentBackground] = useState('/ocean1.mp4');
+  const [currentBackground, setCurrentBackground] = useState('/ocean2.mp4');
   const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(null);
   const [headlines, setHeadlines] = useState<NewsItem[]>([]);
   const [quotes, setQuotes] = useState<string[]>([]);
