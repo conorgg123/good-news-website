@@ -31,61 +31,15 @@ export default function Home() {
       source: "Renewable Energy Watch",
       sourceUrl: "https://goodnewsnetwork.org/category/science/",
       description: "Scientists achieve record-breaking 45% efficiency in new solar cell design, potentially making solar power more affordable and accessible worldwide."
-    },
-    {
-      title: "Animal Shelter Celebrates 100% Adoption Week",
-      source: "Animal Welfare Daily",
-      sourceUrl: "https://goodnewsnetwork.org/category/animals/",
-      description: "Local shelter finds loving homes for all animals during adoption event, setting new community record for pet adoptions in a single week."
-    },
-    {
-      title: "Free Coding Program Reaches Rural Students",
-      source: "Education Forward",
-      sourceUrl: "https://goodnewsnetwork.org/category/youth/",
-      description: "Initiative brings computer science education to underserved areas, helping bridge the digital divide and create new opportunities for rural youth."
-    },
-    {
-      title: "Massive Ocean Cleanup Success Story",
-      source: "Marine Conservation News",
-      sourceUrl: "https://goodnewsnetwork.org/category/earth/",
-      description: "Ocean cleanup project exceeds goals, removing 200 tons of plastic from Pacific Ocean using innovative new technology."
-    },
-    {
-      title: "City Plants 100,000 Trees in Climate Initiative",
-      source: "Green Future Today",
-      sourceUrl: "https://goodnewsnetwork.org/category/earth/",
-      description: "Ambitious urban forestry project completes massive tree-planting campaign, creating new green spaces and improving air quality."
-    },
-    {
-      title: "Breakthrough in Alzheimer's Research",
-      source: "Medical Breakthroughs",
-      sourceUrl: "https://goodnewsnetwork.org/category/health/",
-      description: "New treatment shows promising results in early trials, potentially offering hope to millions affected by Alzheimer's disease."
-    },
-    {
-      title: "Students Create Award-Winning Pollution Solution",
-      source: "Tech for Good",
-      sourceUrl: "https://goodnewsnetwork.org/category/youth/",
-      description: "High school team develops innovative air purification system, winning international science competition and attracting environmental interest."
     }
   ];
 
   const allQuotes = [
-    "Believe you can and You&apos;re halfway there there. - Theodore Roosevelt",
+    "Believe you can and you&apos;re halfway there. - Theodore Roosevelt",
     "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
     "Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill",
     "The only way to do great work is to love what you do. - Steve Jobs",
-    "Everything is possible. The impossible just takes longer. - Dan Brown",
-    "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
-    "The best way to predict the future is to create it. - Peter Drucker",
-    "Everything you've ever wanted is on the other side of fear. - George Addair",
-    "Life is what happens while you're busy making other plans. - John Lennon",
-    "You miss 100% of the shots you don't take. - Wayne Gretzky",
-    "In the middle of difficulty lies opportunity. - Albert Einstein",
-    "The secret of getting ahead is getting started. - Mark Twain",
-    "Whether you think you can or you think you can't, you're right. - Henry Ford",
-    "The journey of a thousand miles begins with one step. - Lao Tzu",
-    "You are never too old to set another goal or to dream a new dream. - C.S. Lewis"
+    "Everything is possible. The impossible just takes longer. - Dan Brown"
   ];
 
   const allVerses = [
@@ -93,31 +47,24 @@ export default function Home() {
     "Jeremiah 29:11 - For I know the plans I have for you, declares the Lord, plans for welfare and not for evil.",
     "Isaiah 41:10 - Fear not, for I am with you; be not dismayed, for I am your God.",
     "Romans 8:28 - And we know that in all things God works for the good of those who love him.",
-    "Joshua 1:9 - Be strong and courageous. Do not be afraid; do not be discouraged.",
-    "Proverbs 3:5-6 - Trust in the Lord with all your heart and lean not on your own understanding.",
-    "Psalm 23:4 - Even though I walk through the valley of the shadow of death, I will fear no evil.",
-    "Matthew 11:28 - Come to me, all you who are weary and burdened, and I will give you rest.",
-    "John 3:16 - For God so loved the world that he gave his one and only Son.",
-    "Psalm 46:1 - God is our refuge and strength, an ever-present help in trouble."
+    "Joshua 1:9 - Be strong and courageous. Do not be afraid; do not be discouraged."
   ];
 
-  const getRandomContent = () => {
-    setIsLoading(true);
-    
-    // Add a small delay to show loading state
-    setTimeout(() => {
-      const randomNews = [...allNews].sort(() => Math.random() - 0.5).slice(0, 5);
-      const randomQuotes = [...allQuotes].sort(() => Math.random() - 0.5).slice(0, 3);
-      const randomVerses = [...allVerses].sort(() => Math.random() - 0.5).slice(0, 2);
-
-      setHeadlines(randomNews);
-      setQuotes(randomQuotes);
-      setVerses(randomVerses);
-      setIsLoading(false);
-    }, 500);
-  };
-
   useEffect(() => {
+    const getRandomContent = () => {
+      setIsLoading(true);
+      setTimeout(() => {
+        const randomNews = [...allNews].sort(() => Math.random() - 0.5).slice(0, 5);
+        const randomQuotes = [...allQuotes].sort(() => Math.random() - 0.5).slice(0, 3);
+        const randomVerses = [...allVerses].sort(() => Math.random() - 0.5).slice(0, 2);
+
+        setHeadlines(randomNews);
+        setQuotes(randomQuotes);
+        setVerses(randomVerses);
+        setIsLoading(false);
+      }, 500);
+    };
+
     // Set up audio
     const audio = new Audio('/relaxing_music.mp3');
     audio.loop = true;
@@ -132,7 +79,6 @@ export default function Home() {
       setCurrentBackground(otherVideos[Math.floor(Math.random() * 2)]);
     }
 
-    // Get initial content
     getRandomContent();
 
     return () => {
@@ -155,10 +101,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative">
-      {/* Background Video */}
-      <div 
-        className="fixed inset-0 w-full h-full z-0"
-      >
+      <div className="fixed inset-0 w-full h-full z-0">
         <video 
           autoPlay 
           loop 
@@ -179,7 +122,22 @@ export default function Home() {
             </h1>
             <div className="flex gap-4">
               <button
-                onClick={getRandomContent}
+                onClick={() => {
+                  const getRandomContent = () => {
+                    setIsLoading(true);
+                    setTimeout(() => {
+                      const randomNews = [...allNews].sort(() => Math.random() - 0.5).slice(0, 5);
+                      const randomQuotes = [...allQuotes].sort(() => Math.random() - 0.5).slice(0, 3);
+                      const randomVerses = [...allVerses].sort(() => Math.random() - 0.5).slice(0, 2);
+
+                      setHeadlines(randomNews);
+                      setQuotes(randomQuotes);
+                      setVerses(randomVerses);
+                      setIsLoading(false);
+                    }, 500);
+                  };
+                  getRandomContent();
+                }}
                 className="p-2 rounded-full hover:bg-white/25 transition-colors"
                 disabled={isLoading}
               >
@@ -195,7 +153,7 @@ export default function Home() {
           </div>
 
           <div className="bg-gray-800/60 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-lg">
-            <h2 className="text-2xl font-bold mb-4 text-white">Today's Good News</h2>
+            <h2 className="text-2xl font-bold mb-4 text-white">Today&apos;s Good News</h2>
             <div className="space-y-6">
               {headlines.map((item, index) => (
                 <div key={index} className="border-b border-gray-600/50 pb-6 last:border-0">
