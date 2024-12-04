@@ -1,5 +1,5 @@
 import Image from "next/image"
-import DonationBanner from '@/components/DonationBanner'
+import DonationBanner from '/DonationBanner'
 import { useEffect, useState } from 'react';;
 
 export default function Home() {
