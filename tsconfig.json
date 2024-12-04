@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["components/*"]"target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
